@@ -16,7 +16,7 @@ except FileExistsError:
 os.chdir('./importables')
 
 with open('_importables', 'w') as importables_list:
-        importables_list.truncate()
+    importables_list.truncate()
 
 for blob in data:
     with urllib.request.urlopen(blob['file']) as response:
@@ -29,7 +29,7 @@ for blob in data:
             doc_meta.write(prop + ': ' + blob['meta'][prop])
             doc_meta.write("\n") # we expect python to convert to os line-ending
 
-    with open('_importables', 'w') as importables_list:
+    with open('_importables', 'a') as importables_list:
         importables_list.write(group_dir + '/' + blob['meta']['title']+'.md'+'\n')
 
 
