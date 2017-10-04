@@ -11,5 +11,5 @@ download, along with the tiddler properties you would like to generate for them.
     1. `python3 pull_files.py`
 1. Import the files into your tiddlywiki. Copy the `importables` folder
 to the directory of your tiddlywiki, then run
-    1. `xargs tiddlywiki --load < importables/_importables`
+    1. `xargs -L 1 tiddlywiki --load < importables/_importables`
 
